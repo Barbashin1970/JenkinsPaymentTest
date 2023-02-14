@@ -30,6 +30,12 @@ public class AccountTest {
         Account account = new Account(name);
         Assert.assertFalse(account.checkNameToEmboss());
     }
+    @Test
+    public void checkNameToEmbossExtraLongName() {
+        name = "1234567891234567890 12345678901234567890";
+        Account account = new Account(name);
+        Assert.assertFalse(account.checkNameToEmboss());
+    }
 
     @Test
     public void checkNameToEmbossShortName() {
